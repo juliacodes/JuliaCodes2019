@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Hamburger from "./components/Hamburger";
+import ScrollNotice from "./components/ScrollNotice";
 
 const HomeContainer = styled.div`
   width: 100vw;
@@ -18,6 +19,7 @@ const Blue = styled.div`
     font-size: 200px;
     line-height: 91.45%;
     padding: 250px 0 0 300px;
+    letter-spacing: 0px;
   }
 `;
 const Cutout = styled.div`
@@ -34,12 +36,13 @@ class Landing extends Component {
       <div>
         <HomeContainer>
           <Blue>
-            <Hamburger></Hamburger>
+            <Hamburger />
             <Cutout />
             <h1>
               JU <br />
               LIA
             </h1>
+            <ScrollNotice />
           </Blue>
         </HomeContainer>
       </div>
