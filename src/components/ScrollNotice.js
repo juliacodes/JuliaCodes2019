@@ -4,8 +4,19 @@ import ArrowDown from "./icons/arrow.svg";
 
 const ScrollNoticeContainer = styled.div`
   position: absolute;
-  left: 140px;
+  left: 120px;
   bottom: 18%;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1s;
+  opacity: 0;
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 const ScrollNoticeImage = styled.img`
   position: relative;
