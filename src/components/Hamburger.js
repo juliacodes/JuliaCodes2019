@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Route, Link, BrowserRouter as Router } from "react-router-dom";
 import styled from "styled-components";
 import hamburger from "./icons/hamburger.svg";
 import close from "./icons/close.svg";
@@ -69,6 +70,75 @@ const NavContainer = styled.div`
   }
 `;
 
+const Links = styled.div`
+  margin-top: 100px;
+  & > a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 45px;
+    margin: 31px 0 0 81px;
+    line-height: 91.45%;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: ${props => (props.on ? "none" : "SlideInText .7s forwards")};
+
+    &:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes SlideInText {
+      0% {
+        transform: translate(100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(0);
+        opacity: 1;
+      }
+    }
+
+    &::after {
+      width: 0px;
+      left: -10px;
+      content: "";
+      display: inline-block;
+      height: 20px;
+      position: absolute;
+      bottom: 0px;
+      z-index: -2;
+      background-color: #ffc7a2;
+      transition: width 0.4s;
+    }
+
+    &:hover::after {
+      width: 160px;
+    }
+
+    &:nth-child(2):hover::after {
+      width: 170px;
+    }
+
+    &:nth-child(3):hover::after {
+      width: 155px;
+    }
+
+    &:nth-child(4):hover::after {
+      width: 205px;
+    }
+  }
+`;
+
 class Hamburger extends Component {
   state = {
     active: false
@@ -90,7 +160,12 @@ class Hamburger extends Component {
           />
         </HamburgerContainer>
         <NavContainer on={this.state.active}>
-          <h2>About</h2>
+          <Links on={this.state.active}>
+            <Link to="/">Home.</Link>
+            <Link to="/About">About.</Link>
+            <Link to="/About">Work.</Link>
+            <Link to="/About">Articles.</Link>
+          </Links>
         </NavContainer>
       </div>
     );
