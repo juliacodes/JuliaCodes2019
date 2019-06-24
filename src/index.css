@@ -9,6 +9,11 @@
   font-family: 'Nunito Sans', sans-serif;
 }
 
+
+body{
+  overflow: hidden;
+}
+
 h1{
   font-weight: 900;
 }
