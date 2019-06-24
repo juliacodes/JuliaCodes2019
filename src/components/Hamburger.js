@@ -89,7 +89,9 @@ class Hamburger extends Component {
             onClick={() => this.setState({ active: !this.state.active })}
           />
         </HamburgerContainer>
-        <NavContainer on={this.state.active}></NavContainer>
+        <NavContainer on={this.state.active}>
+          <h2>About</h2>
+        </NavContainer>
       </div>
     );
   }
