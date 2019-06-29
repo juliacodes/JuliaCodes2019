@@ -3,9 +3,9 @@ import styled from "styled-components";
 import ArrowDown from "./icons/arrow.svg";
 
 const ScrollNoticeContainer = styled.div`
-  position: absolute;
-  left: 120px;
-  bottom: 18%;
+  grid-area: SCROLL;
+  position: relative;
+  margin-bottom: 20px;
   animation: fadeIn 1s forwards;
   animation-delay: 1s;
   opacity: 0;
@@ -19,28 +19,30 @@ const ScrollNoticeContainer = styled.div`
   }
 `;
 const ScrollNoticeImage = styled.img`
-  position: relative;
-  transform: rotate(7deg);
+  position: absolute;
+  bottom: 0;
+  right: -20px;
+  transform: rotate(1.75deg);
   animation: bounce 2s infinite forwards;
 
   @keyframes bounce {
     0% {
-      transform: translate(0) rotate(7deg);
+      transform: translate(0) rotate(1.5deg);
     }
     50% {
-      transform: translate(-3px, 5px) rotate(7deg);
+      transform: translate(-3px, 5px) rotate(1.75deg);
     }
     100% {
-      transform: translate(0) rotate(7deg);
+      transform: translate(0) rotate(1.75deg);
     }
   }
 `;
 
 const Text = styled.p`
-  position: relative;
-  margin-left: -20px;
-  margin-top: -80px;
-  transform: rotate(-56deg);
+  position: absolute;
+  bottom: 40px;
+  right: 0px;
+  transform: rotate(-63deg);
   font-weight: 600;
 `;
 

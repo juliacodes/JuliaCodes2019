@@ -2,19 +2,23 @@ import React, { Component } from "react";
 import { Route, Link, BrowserRouter as Router } from "react-router-dom";
 import styled from "styled-components";
 import hamburger from "./icons/hamburger.svg";
+import hamburgerHover from "./icons/hamburgerHover.svg";
 import close from "./icons/close.svg";
+import closeHover from "./icons/closeHover.svg";
+import Main from "../Landing";
 
 const HamburgerContainer = styled.div`
   width: auto;
   height: auto;
-  position: absolute;
-  right: 50px;
-  top: 40px;
+  padding-top: 40px;
+  padding-right: 40px;
+  grid-area: Hamburger;
 `;
-const HamburgerImg = styled.div`
+export const HamburgerImg = styled.div`
   animation: fadeIn 1s forwards;
-  width: 30px;
-  transition-duration: 0.2s;
+  width: ${props =>
+    props.on ? `40px` : `20px`};
+  transition-duration: .2s;
   height: 30px;
   display: block;
   animation-delay: 1s;
@@ -22,7 +26,8 @@ const HamburgerImg = styled.div`
     props.on ? `url(${hamburger})` : `url(${close})`};
   background-size: 100%;
   background-repeat: no-repeat;
-  z-index: 99;
+  z-index: 99999;
+  position: relative;
   opacity: 0;
   @keyframes fadeIn {
     0% {
@@ -32,18 +37,22 @@ const HamburgerImg = styled.div`
       opacity: 1;
     }
   }
+
+  &:hover {
+    background-image: ${props =>
+    props.on ? `url(${hamburgerHover})` : `url(${closeHover})`};
+  }
 `;
 const NavContainer = styled.div`
   height: 100vh;
   width: 500px;
   background-color: white;
-  position: absolute;
+  position: ${props => (props.on ? "fixed" : "absolute")};
   display: block;
   opacity: 0;
   transition: 0.3s;
   animation: ${props =>
     props.on ? "SlideOutRight .7s forwards" : "SlideFromLeft .5s forwards"};
-  z-index: -2;
   right: 0;
   top: 0;
 
@@ -72,7 +81,9 @@ const NavContainer = styled.div`
 
 const Links = styled.div`
   margin-top: 100px;
+  width: auto;
   & > a {
+    width: 200px;
     display: block;
     color: black;
     text-decoration: none;
@@ -107,35 +118,6 @@ const Links = styled.div`
         opacity: 1;
       }
     }
-
-    &::after {
-      width: 0px;
-      left: -10px;
-      content: "";
-      display: inline-block;
-      height: 20px;
-      position: absolute;
-      bottom: 0px;
-      z-index: -2;
-      background-color: #ffc7a2;
-      transition: width 0.4s;
-    }
-
-    &:hover::after {
-      width: 160px;
-    }
-
-    &:nth-child(2):hover::after {
-      width: 170px;
-    }
-
-    &:nth-child(3):hover::after {
-      width: 155px;
-    }
-
-    &:nth-child(4):hover::after {
-      width: 205px;
-    }
   }
 `;
 
@@ -152,13 +134,11 @@ class Hamburger extends Component {
   }
   render() {
     return (
-      <div>
-        <HamburgerContainer>
-          <HamburgerImg
-            on={this.state.active}
-            onClick={() => this.setState({ active: !this.state.active })}
-          />
-        </HamburgerContainer>
+      <HamburgerContainer>
+        <HamburgerImg
+          on={this.state.active}
+          onClick={() => this.setState({ active: !this.state.active })}
+        />
         <NavContainer on={this.state.active}>
           <Links on={this.state.active}>
             <Link to="/">Home.</Link>
@@ -167,7 +147,7 @@ class Hamburger extends Component {
             <Link to="/About">Articles.</Link>
           </Links>
         </NavContainer>
-      </div>
+      </HamburgerContainer>
     );
   }
 }

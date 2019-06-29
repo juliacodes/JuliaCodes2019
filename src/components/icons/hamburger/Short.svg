@@ -1,6 +1,5 @@
-    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
-      <g>
-        <rect id="vertical-rectangle" width="48" height="4" x="1" y="23" transform="rotate(90 25 24)"/>
-        <rect id="horizontal-rectangle" width="48" height="4" y="21"/>
-      </g>
-    </svg>
+<svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.5294 1H0" stroke="black" stroke-width="2"/>
+
+
+</svg>
