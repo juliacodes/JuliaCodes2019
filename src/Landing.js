@@ -152,7 +152,6 @@ const Description = styled.div`
     font-style: normal;
     font-weight: 800;
     font-size: 40px;
-    line-height: 91.45%;
   }
 
   p {
@@ -172,12 +171,15 @@ const SocialLinks = styled.div`
 `;
 
 const LinkDiv = styled.div`
-  display: inline-block;
   margin-right: 20px;
+  display: inline-block;
+  width: 130px;
 
   p {
     margin: 0;
-    display: inline-block;
+    display: inline;
+    font-weight: 900;
+    color: black;
   }
 `;
 
@@ -185,10 +187,11 @@ const IconImage = styled.div`
   background-image: url(${insta});
   background-size: cover;
   display: inline-block;
-  width: 30px;
-  margin-top: 30px;
-  margin-right: 20px;
-  height: 30px;
+  width: 35px;
+  margin-top: 25px;
+  margin-right: 10px;
+  transform: translateY(12px);
+  height: 35px;
 `;
 
 const Cursor = styled.div``;
@@ -284,6 +287,14 @@ class Landing extends Component {
                 convallis erat.
               </p>
               <SocialLinks>
+                <LinkDiv>
+                  <IconImage />
+                  <p>37.5k</p>
+                </LinkDiv>
+                <LinkDiv>
+                  <IconImage />
+                  <p>37.5k</p>
+                </LinkDiv>
                 <LinkDiv>
                   <IconImage />
                   <p>37.5k</p>
