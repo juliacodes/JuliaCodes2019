@@ -12,14 +12,14 @@ const HamburgerContainer = styled.div`
   height: auto;
   padding-top: 40px;
   padding-right: 40px;
-  grid-area: Hamburger;
+  grid-area: Ham;
 `;
 export const HamburgerImg = styled.div`
   animation: fadeIn 1s forwards;
-  width: ${props =>
-    props.on ? `40px` : `20px`};
-  transition-duration: .2s;
+  width: ${props => (props.on ? `40px` : `20px`)};
+  transition-duration: 0.2s;
   height: 30px;
+  transform: translate(40px);
   display: block;
   animation-delay: 1s;
   background-image: ${props =>
@@ -40,7 +40,7 @@ export const HamburgerImg = styled.div`
 
   &:hover {
     background-image: ${props =>
-    props.on ? `url(${hamburgerHover})` : `url(${closeHover})`};
+      props.on ? `url(${hamburgerHover})` : `url(${closeHover})`};
   }
 `;
 const NavContainer = styled.div`
@@ -95,19 +95,15 @@ const Links = styled.div`
     z-index: 2;
     opacity: 0;
     animation: ${props => (props.on ? "none" : "SlideInText .7s forwards")};
-
     &:nth-child(2) {
       animation-delay: 0.1s;
     }
-
     &:nth-child(3) {
       animation-delay: 0.2s;
     }
-
     &:nth-child(4) {
       animation-delay: 0.3s;
     }
-
     @keyframes SlideInText {
       0% {
         transform: translate(100px);
@@ -118,6 +114,31 @@ const Links = styled.div`
         opacity: 1;
       }
     }
+    &::after {
+      width: 0px;
+      left: -10px;
+      content: "";
+      display: inline-block;
+      height: 20px;
+      position: absolute;
+      bottom: 0px;
+      z-index: -2;
+      background-color: #ffc7a2;
+      transition: width 0.4s;
+    }
+    &:hover::after {
+      width: 160px;
+    }
+    &:nth-child(2):hover::after {
+      width: 170px;
+    }
+    &:nth-child(3):hover::after {
+      width: 155px;
+    }
+    &:nth-child(4):hover::after {
+      width: 205px;
+    }
+  }
   }
 `;
 
