@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Hamburger from "./components/Hamburger";
 import ScrollNotice from "./components/ScrollNotice";
 import insta from "./components/icons/insta.png";
+import medium from "./components/icons/medium.png";
+import github from "./components/icons/github.png";
 
 const GridContainer = styled.div`
   .cursor {
@@ -183,7 +185,7 @@ const LinkDiv = styled.div`
   }
 `;
 
-const IconImage = styled.div`
+const IconImageInsta = styled.div`
   background-image: url(${insta});
   background-size: cover;
   display: inline-block;
@@ -192,6 +194,28 @@ const IconImage = styled.div`
   margin-right: 10px;
   transform: translateY(12px);
   height: 35px;
+`;
+
+const IconImageMedium = styled.div`
+  background-image: url(${medium});
+  background-size: cover;
+  display: inline-block;
+  width: 30px;
+  margin-left: 20px;
+  margin-right: 10px;
+  transform: translateY(9px);
+  height: 30px;
+`;
+
+const IconImageGithub = styled.div`
+  background-image: url(${github});
+  background-size: cover;
+  display: inline-block;
+  width: 30px;
+  margin-left: 20px;
+  margin-right: 10px;
+  transform: translateY(9px);
+  height: 30px;
 `;
 
 const Cursor = styled.div``;
@@ -282,22 +306,26 @@ class Landing extends Component {
             <Description>
               <h1>Web Developer & Designer</h1>
               <p>
-                Duis sit amet mauris in tortor facilisis ornare eleifend vel
-                quam. Aliquam erat volutpat. Integer non elementum sem, vel
-                convallis erat.
+                I’m a student at <strong>Purdue University</strong>, a digital
+                minimalist, an avid book worm, a quick learner & passionate
+                about technology.{" "}
+                <strong>
+                  Feuled by black coffee and a drive to be better than I was
+                  yesterday.
+                </strong>
               </p>
               <SocialLinks>
                 <LinkDiv>
-                  <IconImage />
+                  <IconImageInsta />
                   <p>37.5k</p>
                 </LinkDiv>
                 <LinkDiv>
-                  <IconImage />
-                  <p>37.5k</p>
+                  <IconImageMedium />
+                  <p>1.8k</p>
                 </LinkDiv>
                 <LinkDiv>
-                  <IconImage />
-                  <p>37.5k</p>
+                  <IconImageGithub />
+                  <p>500+</p>
                 </LinkDiv>
               </SocialLinks>
             </Description>
