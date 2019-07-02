@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import Landing from "./pages/landing";
 import About from "./pages/about/";
+import Work from "./pages/work/";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 
@@ -11,6 +12,7 @@ const routing = (
     <div>
       <Route exact path="/" component={Landing} />
       <Route exact path="/about" component={About} />
+      <Route exact path="/work" component={Work} />
     </div>
   </Router>
 );

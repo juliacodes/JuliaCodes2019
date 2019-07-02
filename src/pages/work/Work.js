@@ -57,11 +57,11 @@ const SquareTitle = styled.div`
     letter-spacing: -0.045em;
 
     span {
-      color: orange;
+      color: #b5f6ff;
     }
   }
 `;
-class About extends Component {
+class Work extends Component {
   state = {
     xMain: 0,
     yMain: 0,
@@ -110,9 +110,9 @@ class About extends Component {
         <Content>
           <SquareTitle>
             <p>
-              AB
+              WO
               <br />
-              OUT<span>.</span>
+              RK<span>.</span>
             </p>
           </SquareTitle>
           <Hamburger />
@@ -122,4 +122,4 @@ class About extends Component {
   };
 }
 
-export default About;
+export default Work;

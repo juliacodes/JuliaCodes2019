@@ -86,7 +86,7 @@ class DescriptionHome extends Component {
   render() {
     return (
       <Description>
-        <h1>Web Developer & Designer</h1>
+        <h1>Front End Web Developer</h1>
         <p>
           I’m a student at <strong>Purdue University</strong>, a digital
           minimalist, an avid book worm, a quick learner & passionate about

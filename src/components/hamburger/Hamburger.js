@@ -10,8 +10,9 @@ const HamburgerContainer = styled.div`
   position: absolute;
   right: 0px;
   top: 0px;
+  height: 100%;
 `;
-export const HamburgerImg = styled.div`
+const HamburgerImg = styled.div`
   z-index: 99999;
   display: block;
   position: absolute;
@@ -45,7 +46,7 @@ export const HamburgerImg = styled.div`
 `;
 
 const NavContainer = styled.div`
-  height: 100vh;
+  height: 100%;
   z-index: 999;
   padding-left: 80px;
   width: 500px;
@@ -85,6 +86,7 @@ const NavContainer = styled.div`
 const Links = styled.div`
   margin-top: 100px;
   width: auto;
+  height: 40%;
   & > a {
     width: 200px;
     display: block;
@@ -92,7 +94,7 @@ const Links = styled.div`
     text-decoration: none;
     font-weight: 800;
     font-size: 45px;
-    margin: 31px 0 0 0;
+    margin: 5% 0 0 0;
     line-height: 91.45%;
     position: relative;
     z-index: 2;
@@ -126,17 +128,19 @@ const Links = styled.div`
       position: absolute;
       bottom: 0px;
       z-index: -2;
-      background-color: #ffc7a2;
       transition: width 0.4s;
     }
     &:hover::after {
       width: 150px;
+      background-color: #ecf3f4;
     }
     &:nth-child(2):hover::after {
       width: 150px;
+      background-color: #ffc7a2;
     }
     &:nth-child(3):hover::after {
       width: 145px;
+      background-color: #b5f6ff;
     }
     &:nth-child(4):hover::after {
       width: 190px;
@@ -147,7 +151,15 @@ const Links = styled.div`
 const Contact = styled.div`
   font-size: 13px;
   line-height: 174.19%;
-  /* or 23px */
+  height: 35%;
+  letter-spacing: 0.03em;
+  font-family: "Lato", sans-serif;
+`;
+
+const ReachOut = styled.div`
+  font-size: 13px;
+  line-height: 174.19%;
+  height: 25%;
   letter-spacing: 0.03em;
   font-family: "Lato", sans-serif;
 `;
@@ -173,8 +185,8 @@ class Hamburger extends Component {
         <NavContainer on={this.state.active}>
           <Links on={this.state.active}>
             <Link to="/">Home.</Link>
-            <Link to="/About">About.</Link>
-            <Link to="/About">Work.</Link>
+            <Link to="/about">About.</Link>
+            <Link to="/work">Work.</Link>
             <Link to="/About">Articles.</Link>
           </Links>
           <Contact>
@@ -182,11 +194,10 @@ class Hamburger extends Component {
             Purdue University <br />
             juliajohnson@purdue.edu
           </Contact>
-
-          <Contact>
+          <ReachOut>
             Want to work with me?
             <Link>Reach Out</Link>
-          </Contact>
+          </ReachOut>
         </NavContainer>
       </HamburgerContainer>
     );
