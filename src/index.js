@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
-import About from "./About";
-import { Route, Link, BrowserRouter as Router } from "react-router-dom";
+import Landing from "./pages/landing";
+import About from "./pages/about/";
+import { Route, BrowserRouter as Router } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 
 const routing = (
   <Router>
     <div>
-      <Route exact path="/" component={App} />
+      <Route exact path="/" component={Landing} />
       <Route exact path="/about" component={About} />
     </div>
   </Router>

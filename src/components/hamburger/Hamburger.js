@@ -1,34 +1,33 @@
 import React, { Component } from "react";
-import { Route, Link, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import hamburger from "./icons/hamburger.svg";
-import hamburgerHover from "./icons/hamburgerHover.svg";
-import close from "./icons/close.svg";
-import closeHover from "./icons/closeHover.svg";
-import Main from "../Landing";
+import hamburger from "./hamburger.svg";
+import hamburgerHover from "./hamburgerHover.svg";
+import close from "./close.svg";
+import closeHover from "./closeHover.svg";
 
 const HamburgerContainer = styled.div`
-  width: auto;
-  height: auto;
-  padding-top: 40px;
-  padding-right: 40px;
   grid-area: Ham;
+  position: relative;
 `;
 export const HamburgerImg = styled.div`
-  animation: fadeIn 1s forwards;
-  width: ${props => (props.on ? `40px` : `20px`)};
-  transition-duration: 0.2s;
-  height: 30px;
-  transform: translate(40px);
+  z-index: 99999;
   display: block;
-  animation-delay: 1s;
+  position: absolute;
+  top: 40px;
+  right: 80px;
+  width: ${props => (props.on ? `40px` : `20px`)};
+  height: 30px;
+  display: block;
   background-image: ${props =>
     props.on ? `url(${hamburger})` : `url(${close})`};
   background-size: 100%;
   background-repeat: no-repeat;
-  z-index: 99999;
-  position: relative;
   opacity: 0;
+  transform: translate(40px);
+  transition-duration: 0.2s;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1s;
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -43,6 +42,7 @@ export const HamburgerImg = styled.div`
       props.on ? `url(${hamburgerHover})` : `url(${closeHover})`};
   }
 `;
+
 const NavContainer = styled.div`
   height: 100vh;
   width: 500px;
@@ -138,7 +138,6 @@ const Links = styled.div`
     &:nth-child(4):hover::after {
       width: 205px;
     }
-  }
   }
 `;
 
