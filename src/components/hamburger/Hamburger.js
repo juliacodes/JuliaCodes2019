@@ -7,8 +7,9 @@ import close from "./close.svg";
 import closeHover from "./closeHover.svg";
 
 const HamburgerContainer = styled.div`
-  grid-area: Ham;
-  position: relative;
+  position: absolute;
+  right: 0px;
+  top: 0px;
 `;
 export const HamburgerImg = styled.div`
   z-index: 99999;
@@ -23,10 +24,10 @@ export const HamburgerImg = styled.div`
     props.on ? `url(${hamburger})` : `url(${close})`};
   background-size: 100%;
   background-repeat: no-repeat;
-  opacity: 0;
+  opacity: 1;
   transform: translate(40px);
   transition-duration: 0.2s;
-  animation: fadeIn 1s forwards;
+  /* animation: fadeIn 1s forwards;
   animation-delay: 1s;
   @keyframes fadeIn {
     0% {
@@ -35,7 +36,7 @@ export const HamburgerImg = styled.div`
     100% {
       opacity: 1;
     }
-  }
+  } */
 
   &:hover {
     background-image: ${props =>
@@ -45,16 +46,18 @@ export const HamburgerImg = styled.div`
 
 const NavContainer = styled.div`
   height: 100vh;
+  z-index: 999;
+  padding-left: 80px;
   width: 500px;
   background-color: white;
   position: ${props => (props.on ? "fixed" : "absolute")};
+  right: 0;
+  top: 0;
   display: block;
   opacity: 0;
   transition: 0.3s;
   animation: ${props =>
     props.on ? "SlideOutRight .7s forwards" : "SlideFromLeft .5s forwards"};
-  right: 0;
-  top: 0;
 
   @keyframes SlideFromLeft {
     0% {
@@ -89,7 +92,7 @@ const Links = styled.div`
     text-decoration: none;
     font-weight: 800;
     font-size: 45px;
-    margin: 31px 0 0 81px;
+    margin: 31px 0 0 0;
     line-height: 91.45%;
     position: relative;
     z-index: 2;
@@ -127,18 +130,26 @@ const Links = styled.div`
       transition: width 0.4s;
     }
     &:hover::after {
-      width: 160px;
+      width: 150px;
     }
     &:nth-child(2):hover::after {
-      width: 170px;
+      width: 150px;
     }
     &:nth-child(3):hover::after {
-      width: 155px;
+      width: 145px;
     }
     &:nth-child(4):hover::after {
-      width: 205px;
+      width: 190px;
     }
   }
+`;
+
+const Contact = styled.div`
+  font-size: 13px;
+  line-height: 174.19%;
+  /* or 23px */
+  letter-spacing: 0.03em;
+  font-family: "Lato", sans-serif;
 `;
 
 class Hamburger extends Component {
@@ -166,6 +177,16 @@ class Hamburger extends Component {
             <Link to="/About">Work.</Link>
             <Link to="/About">Articles.</Link>
           </Links>
+          <Contact>
+            Julia Johnson <br />
+            Purdue University <br />
+            juliajohnson@purdue.edu
+          </Contact>
+
+          <Contact>
+            Want to work with me?
+            <Link>Reach Out</Link>
+          </Contact>
         </NavContainer>
       </HamburgerContainer>
     );

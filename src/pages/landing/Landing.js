@@ -5,13 +5,10 @@ import DescriptionHome from "../../components/descriptionhome";
 const Cursor = styled.div``;
 const Mouse = styled.div``;
 
-const GridContainer = styled.div`
+const Layout = styled.div`
+  width: 100vw;
   height: 100vh;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 60px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 60px;
-  grid-template-rows: 60px 1fr 1fr 1fr 1fr 60px;
-  grid-template-areas: ". . .  .  .  .  .  .  . " ". Content Content Content Content Content Content Content ." ". Content Content Content Content Content Content Content ." ". Content Content Content Content Content Content Content ." ". Content Content Content Content Content Content Content ." "Footer Footer Footer Footer Footer Footer Footer Footer Footer";
+  padding: 60px;
 
   .cursor {
     height: 50px;
@@ -36,87 +33,46 @@ const GridContainer = styled.div`
 `;
 
 const Content = styled.div`
+  max-width: 2000px;
+  margin: 0 auto;
+  background-color: #ecf3f4;
+  display: flex;
+  flex-wrap: wrap;
   height: 100%;
-  display: grid;
-  grid-area: Content;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: "Triangle Triangle Triangle ContentRight ContentRight ContentRight ContentRight ContentRight ContentRight ContentRight" "Triangle Triangle Triangle ContentRight ContentRight ContentRight ContentRight ContentRight ContentRight ContentRight" "Triangle Triangle Triangle ContentRight ContentRight ContentRight ContentRight ContentRight ContentRight ContentRight" "Triangle Triangle Triangle ContentRight ContentRight ContentRight ContentRight ContentRight ContentRight ContentRight" "Triangle Triangle Triangle ContentRight ContentRight ContentRight ContentRight ContentRight ContentRight ContentRight";
-  overflow: hidden;
-
-  &::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+  position: relative;
 `;
 
-const Triangle = styled.div`
-  animation: slideFromRight 1s forwards;
-  grid-area: Triangle;
-  position: relative;
+const Left = styled.div`
+  flex: 50%;
   height: 100%;
-  z-index: 2;
-  @keyframes slideFromRight {
-    0% {
-      transform: translate(2000px);
-      opacity: 0;
-    }
-    100% {
-      transform: translate(0);
-      opacity: 1;
-    }
-  }
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const Right = styled.div`
+  flex: 50%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 const JULIA = styled.div`
-  grid-area: Triangle;
-  position: absolute;
-  margin-top: 25vh;
-  right: 0;
-  z-index: 5;
-  opacity: 0;
-  font-size: 220px;
-  line-height: 86.95%;
-  letter-spacing: -0.03em;
-  pointer-events: none;
-  font-weight: 900;
-  animation: slideFromLeft 1s forwards;
-  animation-delay: 0.5s;
-
-  @keyframes slideFromLeft {
-    0% {
-      transform: translate(-1000px);
-      opacity: 0;
-    }
-    100% {
-      transform: translate(0px);
-      opacity: 1;
-    }
-  }
-`;
-
-const BlueTriangle = styled.div`
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  right: 0;
-  top: 0;
-  border-bottom: 100vh solid #ecf3f4;
-  border-left: 400px solid transparent;
-`;
-
-const BlueBackground = styled.div`
-  height: 100%;
-  background-color: #ecf3f4;
+  padding: 0;
+  width: 100%;
+  flex: 1 0 auto;
   position: relative;
-  z-index: 1;
-  display: grid;
-  grid-area: ContentRight;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: ". . . . . . . . . Ham" ". . . . . . . . . ." ". . Description Description Description Description Description Description . ." ". . Description Description Description Description Description Description . ." ". . Description Description Description Description Description Description . ." ". . . . . . . . . ." ". . . . . . . . . .";
-  animation: slideFromRight 1s forwards;
+  display: flex;
+  flex-direction: column;
+  background-position: center center;
+  p {
+    margin: 0 auto;
+    font-weight: 900;
+    font-size: 200px;
+    line-height: 86.95%;
+    letter-spacing: -0.03em;
+  }
 `;
 
 class Landing extends Component {
@@ -148,7 +104,7 @@ class Landing extends Component {
   render = () => {
     const { xMain, yMain, xTrailing, yTrailing } = this.state;
     return (
-      <GridContainer onMouseMove={e => this.handleMouseMove(e)}>
+      <Layout onMouseMove={e => this.handleMouseMove(e)}>
         <Mouse className="Mouse">
           <Cursor
             className="cursor"
@@ -166,19 +122,20 @@ class Landing extends Component {
           />
         </Mouse>
         <Content>
-          <Triangle>
-            <BlueTriangle />
+          <Hamburger />
+          <Left>
             <JULIA>
-              JU <br />
-              LIA
+              <p>
+                JU <br />
+                LIA
+              </p>
             </JULIA>
-          </Triangle>
-          <BlueBackground>
+          </Left>
+          <Right>
             <DescriptionHome />
-            <Hamburger />
-          </BlueBackground>
+          </Right>
         </Content>
-      </GridContainer>
+      </Layout>
     );
   };
 }

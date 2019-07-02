@@ -5,9 +5,13 @@ import medium from "./medium.png";
 import github from "./github.png";
 
 const Description = styled.div`
-  grid-area: Description;
-  padding: 5.8vh 30px 0 30px;
+  padding: 0;
   width: 100%;
+  flex: 1 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-position: center center;
 
   h1 {
     width: 100%;
@@ -18,7 +22,7 @@ const Description = styled.div`
   }
 
   p {
-    margin-top: 30px;
+    margin: 30px 0;
     width: 100%;
     max-width: 500px;
     font-family: "Lato", sans-serif;
@@ -33,7 +37,6 @@ const Description = styled.div`
 const SocialLinks = styled.div`
   width: 100%;
   padding: 0;
-  padding-top: 35px;
   display: flex;
   align-content: space-around;
 `;
