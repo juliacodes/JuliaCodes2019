@@ -6,6 +6,7 @@ import TimelineRow from "./TimelineRow";
 import GridRow from "./GridRow";
 import Square from "../../components/square";
 import SkillsGrid from "./SkillsGrid";
+import Footer from "../../components/footer";
 
 const Cursor = styled.div``;
 const Mouse = styled.div``;
@@ -107,6 +108,7 @@ class About extends Component {
           <RowSpacer />
           <SkillsGrid />
           <Hamburger />
+          <Footer />
         </Content>
       </Layout>
     );
