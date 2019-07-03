@@ -4,7 +4,7 @@ import Hamburger from "../../components/hamburger";
 import IntroRow from "./IntroRow";
 import TimelineRow from "./TimelineRow";
 import GridRow from "./GridRow";
-import Square from "../../components/square/Square";
+import Square from "../../components/square";
 
 const Cursor = styled.div``;
 const Mouse = styled.div``;

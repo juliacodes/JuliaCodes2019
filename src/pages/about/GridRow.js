@@ -4,6 +4,7 @@ import comp from "./comp.png";
 import coffee from "./coffee.png";
 import ipad from "./ipad.png";
 import sticker from "./sticker.png";
+import Button from "../../components/button";
 
 const Row = styled.div`
   width: 100%;
@@ -80,7 +81,7 @@ const CTAText = styled.div`
   }
 `;
 
-function GridRow() {
+function GridRow(props) {
   return (
     <Row>
       <LeftGrid>
@@ -92,6 +93,7 @@ function GridRow() {
       <RightCTA>
         <CTAText>
           <h3>I'm a lot cooler on instagram</h3>
+          <Button buttonText="See More" link="/" />
         </CTAText>
       </RightCTA>
     </Row>
