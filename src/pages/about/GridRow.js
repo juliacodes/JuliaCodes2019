@@ -70,7 +70,7 @@ const CTAText = styled.div`
 
   h3 {
     max-width: 250px;
-    margin: 30px auto;
+    margin: 30px 0;
     text-align: left;
     font-family: "Lato", sans-serif;
     font-size: 28px;
