@@ -12,8 +12,12 @@ const Cursor = styled.div``;
 const Mouse = styled.div``;
 
 const Layout = styled.div`
-  width: 100vw;
-  padding: 60px;
+  padding: 30px;
+
+  @media (min-width: 900px) {
+    width: 100vw;
+    padding: 60px;
+  }
 
   .cursor {
     height: 50px;

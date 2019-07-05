@@ -10,17 +10,34 @@ const Row = styled.div`
 `;
 
 const LeftTriad = styled.div`
-  flex: 30%;
+  flex: 100%;
+
+  @media (min-width: 900px) {
+    flex: 30%;
+  }
 `;
 
 const CenterTriad = styled.div`
-  flex: 30%;
+  flex: 100%;
+
+  @media (min-width: 900px) {
+    flex: 30%;
+  }
 `;
 const RightTriad = styled.div`
-  flex: 30%;
+  flex: 100%;
+
+  @media (min-width: 900px) {
+    flex: 30%;
+  }
 `;
 
 const TimelineText = styled.div`
+  margin: 0 0 100px 0;
+
+  @media (min-width: 900px) {
+    margin: 0;
+  }
   h2 {
     max-width: 250px;
     margin: 30px auto;
