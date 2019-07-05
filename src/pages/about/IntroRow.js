@@ -8,25 +8,37 @@ const Row = styled.div`
   height: auto;
   display: flex;
   flex-wrap: wrap;
+
+  @media (min-width: 900px) {
+  }
 `;
 
 const Left = styled.div`
-  flex: 55%;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
+  flex: 100%;
+
+  @media (min-width: 900px) {
+    flex: 55%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 const HeaderText = styled.div`
-  padding: 0;
-  width: 50%;
-  min-width: 200px;
-  flex: 1 0 auto;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 0 20%;
-  background-position: center center;
+  flex: 100%;
+  padding: 20px;
+
+  @media (min-width: 900px) {
+    padding: 0;
+    width: 50%;
+    min-width: 200px;
+    flex: 1 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20%;
+    background-position: center center;
+  }
 
   h1 {
     font-family: "Lato", sans-serif;
@@ -49,21 +61,37 @@ const HeaderText = styled.div`
 `;
 
 const Right = styled.div`
-  flex: 45%;
-  height: auto;
-  display: flex;
-  position: relative;
+  flex: 100%;
+  padding: 20px;
+
+  @media (min-width: 900px) {
+    flex: 45%;
+    height: auto;
+    display: flex;
+    position: relative;
+  }
 `;
 
 const RightImage = styled.div`
+  background-position: center center;
   width: 100%;
   height: 50vh;
   max-height: 800px;
   min-height: 500px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center right;
   background-image: url(${Me});
+
+  @media (min-width: 900px) {
+    width: 100%;
+    height: 50vh;
+    max-height: 800px;
+    min-height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-image: url(${Me});
+  }
 `;
 
 function IntroRow() {
