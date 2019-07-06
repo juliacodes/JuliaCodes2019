@@ -8,7 +8,11 @@ const Mouse = styled.div``;
 const Layout = styled.div`
   width: 100vw;
   height: 100vh;
-  padding: 60px;
+  padding: 20px;
+
+  @media (min-width: 900px) {
+    padding: 60px;
+  }
 
   .cursor {
     height: 50px;
@@ -43,35 +47,51 @@ const Content = styled.div`
 `;
 
 const Left = styled.div`
-  flex: 50%;
-  height: 100%;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
+  flex: 100%;
+
+  @media (min-width: 900px) {
+    flex: 50%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 const Right = styled.div`
-  flex: 50%;
-  height: 100%;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
+  flex: 100%;
+
+  @media (min-width: 900px) {
+    flex: 50%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 const JULIA = styled.div`
-  padding: 0;
-  width: 100%;
-  flex: 1 0 auto;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  background-position: center center;
+  background-color: white;
+  padding: 20px;
+  width: 350px;
+
   p {
     margin: 0 auto;
     font-weight: 900;
     font-size: 200px;
     line-height: 86.95%;
     letter-spacing: -0.03em;
+  }
+
+  @media (min-width: 900px) {
+    background-color: unset;
+    padding: 0;
+    width: 100%;
+    flex: 1 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-position: center center;
   }
 `;
 

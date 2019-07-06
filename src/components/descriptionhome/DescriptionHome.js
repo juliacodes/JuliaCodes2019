@@ -14,15 +14,21 @@ const Description = styled.div`
   background-position: center center;
 
   h1 {
-    width: 100%;
-    font-family: "Lato", sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 40px;
+    text-align: center;
+
+    @media (min-width: 900px) {
+      text-align: left;
+      width: 100%;
+      font-family: "Lato", sans-serif;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 40px;
+    }
   }
 
   p {
-    margin: 30px 0;
+    text-align: center;
+    margin: 30px auto;
     width: 100%;
     max-width: 500px;
     font-family: "Lato", sans-serif;
@@ -31,14 +37,25 @@ const Description = styled.div`
     line-height: 156.19%;
     color: #5e5e5e;
     letter-spacing: 0.03em;
+
+    @media (min-width: 900px) {
+      text-align: left;
+      margin: 30px 0;
+    }
   }
 `;
 
 const SocialLinks = styled.div`
-  width: 100%;
+  width: auto;
   padding: 0;
   display: flex;
   align-content: space-around;
+  margin: 20px auto;
+
+  @media (min-width: 900px) {
+    margin: unset;
+    width: 100%;
+  }
 `;
 
 const LinkDiv = styled.div`
