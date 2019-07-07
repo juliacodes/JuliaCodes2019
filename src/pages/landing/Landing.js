@@ -9,9 +9,12 @@ const Layout = styled.div`
   width: 100vw;
   height: 100vh;
   padding: 20px;
+  overflow: hidden;
 
   @media (min-width: 900px) {
     padding: 60px;
+    width: 100vw;
+    height: 100vh;
   }
 
   .cursor {
@@ -35,10 +38,16 @@ const Layout = styled.div`
     z-index: 100001;
   }
 `;
-
+const ScrollWidth = styled.div`
+  width: 200vw;
+  height: 90vh;
+  position: absolute;
+  overflow-y: scroll !important;
+`;
 const Content = styled.div`
-  max-width: 2000px;
-  margin: 0 auto;
+  /* max-width: 2000px; */
+  width: 100vw;
+  margin: 0;
   background-color: #ecf3f4;
   display: flex;
   flex-wrap: wrap;
@@ -141,20 +150,22 @@ class Landing extends Component {
             }}
           />
         </Mouse>
-        <Content>
-          <Hamburger />
-          <Left>
-            <JULIA>
-              <p>
-                JU <br />
-                LIA
-              </p>
-            </JULIA>
-          </Left>
-          <Right>
-            <DescriptionHome />
-          </Right>
-        </Content>
+        <ScrollWidth>
+          <Content>
+            <Hamburger />
+            <Left>
+              <JULIA>
+                <p>
+                  JU <br />
+                  LIA
+                </p>
+              </JULIA>
+            </Left>
+            <Right>
+              <DescriptionHome />
+            </Right>
+          </Content>
+        </ScrollWidth>
       </Layout>
     );
   };
