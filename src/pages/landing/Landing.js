@@ -46,7 +46,7 @@ const ScrollWidth = styled.div`
 `;
 const Content = styled.div`
   /* max-width: 2000px; */
-  width: 100vw;
+  width: 95vw;
   margin: 0;
   background-color: #ecf3f4;
   display: flex;
