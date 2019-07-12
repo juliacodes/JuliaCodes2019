@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components/macro";
 import Hamburger from "../../components/hamburger";
+import { Container } from "../../components/container";
 import DescriptionHome from "../../components/descriptionhome";
 const Cursor = styled.div``;
 const Mouse = styled.div``;
@@ -42,16 +43,17 @@ const Content = styled.div`
   display: flex;
   min-height: calc(100% -30px);
   max-width: 2000px;
-  background-color: #ecf3f4;
+
   flex: 1 0 auto;
   flex-wrap: wrap;
   position: relative;
   overflow: scroll;
 `;
 
-const Container = styled.div`
+const HomeLanding = styled.div`
   display: flex;
   flex: 1 0 auto;
+  background-color: #ecf3f4;
   width: 100%;
   height: 100%;
   flex-wrap: wrap;
@@ -153,7 +155,7 @@ class Landing extends Component {
           />
         </Mouse>
         <Content>
-          <Container>
+          <HomeLanding>
             <Hamburger />
             <Left>
               <JULIA>
@@ -166,7 +168,7 @@ class Landing extends Component {
             <Right>
               <DescriptionHome />
             </Right>
-          </Container>
+          </HomeLanding>
           <Container>
             <div>Hello</div>
           </Container>

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components/macro";
+import Paragraph from "../../components/Paragraph";
+import Heading from "../../components/Heading";
 import insta from "./insta.png";
 import medium from "./medium.png";
 import github from "./github.png";
@@ -12,37 +14,6 @@ const Description = styled.div`
   display: flex;
   flex-direction: column;
   background-position: center center;
-
-  h1 {
-    text-align: center;
-
-    @media (min-width: 900px) {
-      text-align: left;
-      width: 100%;
-      font-family: "Lato", sans-serif;
-      font-style: normal;
-      font-weight: 800;
-      font-size: 40px;
-    }
-  }
-
-  p {
-    text-align: center;
-    margin: 30px auto;
-    width: 100%;
-    max-width: 500px;
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 156.19%;
-    color: #5e5e5e;
-    letter-spacing: 0.03em;
-
-    @media (min-width: 900px) {
-      text-align: left;
-      margin: 30px 0;
-    }
-  }
 `;
 
 const SocialLinks = styled.div`
@@ -103,8 +74,8 @@ class DescriptionHome extends Component {
   render() {
     return (
       <Description>
-        <h1>Front End Web Developer</h1>
-        <p>
+        <Heading>Front End Web Developer</Heading>
+        <Paragraph>
           I’m a student at <strong>Purdue University</strong>, a digital
           minimalist, an avid book worm, a quick learner & passionate about
           technology.{" "}
@@ -112,19 +83,19 @@ class DescriptionHome extends Component {
             Feuled by black coffee and a drive to be better than I was
             yesterday.
           </strong>
-        </p>
+        </Paragraph>
         <SocialLinks>
           <LinkDiv>
             <IconImageInsta />
-            <p>37.5k</p>
+            <Paragraph>37.5k</Paragraph>
           </LinkDiv>
           <LinkDiv>
             <IconImageMedium />
-            <p>1.8k</p>
+            <Paragraph>1.8k</Paragraph>
           </LinkDiv>
           <LinkDiv>
             <IconImageGithub />
-            <p>500+</p>
+            <Paragraph>500+</Paragraph>
           </LinkDiv>
         </SocialLinks>
       </Description>
