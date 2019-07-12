@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components/macro";
 import Hamburger from "../../components/hamburger";
+import TwoColumnDiv from "../../components/TwoColumnDiv";
 import { Container } from "../../components/container";
 import DescriptionHome from "../../components/descriptionhome";
 const Cursor = styled.div``;
@@ -43,7 +44,6 @@ const Content = styled.div`
   display: flex;
   min-height: calc(100% -30px);
   max-width: 2000px;
-
   flex: 1 0 auto;
   flex-wrap: wrap;
   position: relative;
@@ -108,6 +108,10 @@ const JULIA = styled.div`
   }
 `;
 
+const GrayContainer = styled(Container)`
+  background-color: #f2f2f2;
+`;
+
 class Landing extends Component {
   state = {
     xMain: 0,
@@ -169,9 +173,9 @@ class Landing extends Component {
               <DescriptionHome />
             </Right>
           </HomeLanding>
-          <Container>
-            <div>Hello</div>
-          </Container>
+          <GrayContainer>
+            <TwoColumnDiv />
+          </GrayContainer>
         </Content>
       </Layout>
     );
