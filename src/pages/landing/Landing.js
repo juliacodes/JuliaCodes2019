@@ -6,13 +6,11 @@ const Cursor = styled.div``;
 const Mouse = styled.div``;
 
 const Layout = styled.div`
-  width: 100vw;
-  height: 100vh;
-  padding: 20px;
+  display: flex;
+  min-height: 100vh;
   overflow: hidden;
 
   @media (min-width: 900px) {
-    padding: 60px;
     width: 100vw;
     height: 100vh;
   }
@@ -38,21 +36,25 @@ const Layout = styled.div`
     z-index: 100001;
   }
 `;
-const ScrollWidth = styled.div`
-  width: 200vw;
-  height: 90vh;
-  position: absolute;
-  overflow-y: scroll !important;
-`;
+
 const Content = styled.div`
-  /* max-width: 2000px; */
-  width: 95vw;
-  margin: 0;
-  background-color: #ecf3f4;
+  margin: 30px;
   display: flex;
+  min-height: calc(100% -30px);
+  max-width: 2000px;
+  background-color: #ecf3f4;
+  flex: 1 0 auto;
   flex-wrap: wrap;
-  height: 100%;
   position: relative;
+  overflow: scroll;
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex: 1 0 auto;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
 `;
 
 const Left = styled.div`
@@ -150,8 +152,8 @@ class Landing extends Component {
             }}
           />
         </Mouse>
-        <ScrollWidth>
-          <Content>
+        <Content>
+          <Container>
             <Hamburger />
             <Left>
               <JULIA>
@@ -164,8 +166,11 @@ class Landing extends Component {
             <Right>
               <DescriptionHome />
             </Right>
-          </Content>
-        </ScrollWidth>
+          </Container>
+          <Container>
+            <div>Hello</div>
+          </Container>
+        </Content>
       </Layout>
     );
   };
