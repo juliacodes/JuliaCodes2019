@@ -109,7 +109,13 @@ const JULIA = styled.div`
 `;
 
 const GrayContainer = styled(Container)`
+  background: linear-gradient(180deg, #ffffff 0%, #f2f2f2 100%);
+  margin: 0;
+`;
+
+const SolidGrayContainer = styled(Container)`
   background-color: #f2f2f2;
+  margin: 0;
 `;
 
 class Landing extends Component {
@@ -176,6 +182,9 @@ class Landing extends Component {
           <GrayContainer>
             <TwoColumnDiv />
           </GrayContainer>
+          <SolidGrayContainer>
+            <TwoColumnDiv />
+          </SolidGrayContainer>
         </Content>
       </Layout>
     );

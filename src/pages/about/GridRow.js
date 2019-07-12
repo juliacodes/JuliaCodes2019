@@ -4,7 +4,7 @@ import comp from "./comp.png";
 import coffee from "./coffee.png";
 import ipad from "./ipad.png";
 import sticker from "./sticker.png";
-import Button from "../../components/button";
+import Button from "../../components/Button";
 
 const Row = styled.div`
   width: 100%;
@@ -93,7 +93,7 @@ function GridRow(props) {
       <RightCTA>
         <CTAText>
           <h3>I'm a lot cooler on instagram</h3>
-          <Button buttonText="See More" link="/" />
+          <Button>See More</Button>
         </CTAText>
       </RightCTA>
     </Row>

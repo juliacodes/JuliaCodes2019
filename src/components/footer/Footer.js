@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../button";
+import Button from "../../components/Button";
 import styled from "styled-components/macro";
 
 const FooterCont = styled.div`
