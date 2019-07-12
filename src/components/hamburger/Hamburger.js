@@ -7,9 +7,9 @@ import close from "./close.svg";
 import closeHover from "./closeHover.svg";
 
 const HamburgerContainer = styled.div`
-  position: absolute;
-  right: 0px;
-  top: 0px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
   height: 100%;
 `;
 const HamburgerImg = styled.div`
