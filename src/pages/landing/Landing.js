@@ -42,8 +42,7 @@ const Layout = styled.div`
 const Content = styled.div`
   margin: 30px;
   display: flex;
-  min-height: calc(100% -30px);
-  max-width: 2000px;
+  width: calc(100% - 90px);
   flex: 1 0 auto;
   flex-wrap: wrap;
   position: relative;
@@ -54,7 +53,6 @@ const HomeLanding = styled.div`
   display: flex;
   flex: 1 0 auto;
   background-color: #ecf3f4;
-  width: 100%;
   height: 100%;
   flex-wrap: wrap;
 `;
