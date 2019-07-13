@@ -11,6 +11,7 @@ const HamburgerContainer = styled.div`
   right: 20px;
   top: 20px;
   height: 100%;
+  z-index: 9999;
 `;
 const HamburgerImg = styled.div`
   z-index: 99999;
@@ -28,7 +29,7 @@ const HamburgerImg = styled.div`
   opacity: 1;
   transform: translate(40px);
   transition-duration: 0.2s;
-  /* animation: fadeIn 1s forwards;
+  animation: fadeIn 1s forwards;
   animation-delay: 1s;
   @keyframes fadeIn {
     0% {
@@ -37,7 +38,7 @@ const HamburgerImg = styled.div`
     100% {
       opacity: 1;
     }
-  } */
+  }
 
   &:hover {
     background-image: ${props =>
@@ -56,7 +57,6 @@ const NavContainer = styled.div`
   top: 0;
   display: block;
   opacity: 0;
-  transition: 0.3s;
   animation: ${props =>
     props.on ? "SlideOutRight .7s forwards" : "SlideFromLeft .5s forwards"};
 

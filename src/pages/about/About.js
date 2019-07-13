@@ -14,6 +14,8 @@ const Mouse = styled.div``;
 const Layout = styled.div`
   display: flex;
   min-height: 100vh;
+  max-width: 2000px;
+  margin: 0 auto;
   overflow: hidden;
 
   @media (min-width: 900px) {

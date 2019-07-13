@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:400,900|Source+Sans+Pro:900&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -10,9 +9,6 @@
 
 .long {
   transform: translateY(5px);
-}
-
-body {
 }
 
 h1 {

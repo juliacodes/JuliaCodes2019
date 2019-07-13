@@ -14,6 +14,8 @@ const Layout = styled.div`
   display: flex;
   min-height: 100vh;
   overflow: hidden;
+  max-width: 2000px;
+  margin: 0 auto;
 
   @media (min-width: 900px) {
     width: 100vw;
@@ -44,6 +46,7 @@ const Layout = styled.div`
 
 const Content = styled.div`
   margin: 30px;
+
   display: flex;
   width: calc(100% - 90px);
   flex: 1 0 auto;

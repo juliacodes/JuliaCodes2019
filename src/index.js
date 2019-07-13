@@ -9,6 +9,10 @@ import * as serviceWorker from "./serviceWorker";
 
 const routing = (
   <Router>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,900|Source+Sans+Pro:900&display=swap"
+      rel="stylesheet"
+    ></link>
     <div>
       <Route exact path="/" component={Landing} />
       <Route exact path="/about" component={About} />
