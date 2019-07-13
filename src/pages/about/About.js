@@ -7,16 +7,21 @@ import GridRow from "./GridRow";
 import Square from "../../components/square";
 import SkillsGrid from "./SkillsGrid";
 import Footer from "../../components/footer";
+import { Container } from "../../components/container";
+import Paragraph from "../../components/Paragraph";
+import Heading from "../../components/Heading";
 
 const Cursor = styled.div``;
 const Mouse = styled.div``;
 
 const Layout = styled.div`
-  padding: 30px;
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
 
   @media (min-width: 900px) {
     width: 100vw;
-    padding: 60px;
+    height: 100vh;
   }
 
   .cursor {
@@ -42,11 +47,21 @@ const Layout = styled.div`
 `;
 
 const Content = styled.div`
-  max-width: 2000px;
-  margin: 0 auto;
-  background-color: #f7f7f7;
-  height: 100%;
+  margin: 30px;
+  display: flex;
+  width: calc(100% - 90px);
+  flex: 1 0 auto;
+  flex-wrap: wrap;
   position: relative;
+  background-color: #f6f6f6;
+  overflow: scroll;
+`;
+
+const AboutLanding = styled.div`
+  display: flex;
+  flex: 1 0 auto;
+  height: 100%;
+  flex-wrap: wrap;
 `;
 
 const RowSpacer = styled.div`
@@ -101,10 +116,10 @@ class About extends Component {
           />
         </Mouse>
         <Content>
-          <Square />
-          <RowSpacer />
-          <RowSpacer />
-          <IntroRow />
+          <AboutLanding>
+            <Square />
+            <IntroRow />
+          </AboutLanding>
           <RowSpacer />
           <TimelineRow />
           <RowSpacer />

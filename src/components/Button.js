@@ -11,7 +11,7 @@ const Button = styled.button`
   border: none;
   border-bottom: 1px solid #5e5e5e;
   text-align: center;
-  transition: all 1s;
+  transition: all 0.2s;
 
   &:hover {
     border: none;

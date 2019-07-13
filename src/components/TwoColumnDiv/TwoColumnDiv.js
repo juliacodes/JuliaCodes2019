@@ -14,7 +14,8 @@ const FlexContainer = styled(Container)`
 const Image = styled(Container)`
   width: 40%;
   height: 700px;
-  background-image: url("https://s3-alpha-sig.figma.com/img/a8b5/7dc0/f8f80687d70eca6d0daa526aca42f610?Expires=1563753600&Signature=XULw7Hmg2FFacy4LOrFog1-P9Pdkz4bD6M72dCEYmE5u6btZOd7geuB1biU5qaJB4DySYEhGWUsK4Iv4ucK003eBT33Y7mawc6D8h7ZbHUgwqkAi9JqdYDvA-HNnrs1rjcBjxLjPD5J7Ykser0SSbDSdmJQGFgoGpvZMioKw839TIFLlovJlJQRXYPomePjif17ZoBHvR4LAkPatjYP169Njjws-KypTsg9NhzfVav2D2tYw-29tcpbM~nuJ6U5xzpeZU8FfCBqGy88WzTId6-3nxx1ptv9wkerInDHeRCyW4hkuKqTWyQEP02Wsr4qfgAO8NhuAbf1SQDBeu8ffNw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+  background-color: #d3d3d3;
+  /* background-image: url("https://s3-alpha-sig.figma.com/img/a8b5/7dc0/f8f80687d70eca6d0daa526aca42f610?Expires=1563753600&Signature=XULw7Hmg2FFacy4LOrFog1-P9Pdkz4bD6M72dCEYmE5u6btZOd7geuB1biU5qaJB4DySYEhGWUsK4Iv4ucK003eBT33Y7mawc6D8h7ZbHUgwqkAi9JqdYDvA-HNnrs1rjcBjxLjPD5J7Ykser0SSbDSdmJQGFgoGpvZMioKw839TIFLlovJlJQRXYPomePjif17ZoBHvR4LAkPatjYP169Njjws-KypTsg9NhzfVav2D2tYw-29tcpbM~nuJ6U5xzpeZU8FfCBqGy88WzTId6-3nxx1ptv9wkerInDHeRCyW4hkuKqTWyQEP02Wsr4qfgAO8NhuAbf1SQDBeu8ffNw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"); */
   background-size: cover;
   background-repeat: no-repeat;
 `;

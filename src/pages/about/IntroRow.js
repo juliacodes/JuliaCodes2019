@@ -67,6 +67,7 @@ const Right = styled.div`
   @media (min-width: 900px) {
     flex: 45%;
     height: auto;
+    padding-right: 0;
     display: flex;
     position: relative;
   }
