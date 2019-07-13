@@ -3,7 +3,10 @@ import styled from "styled-components/macro";
 import Hamburger from "../../components/hamburger";
 import TwoColumnDiv from "../../components/TwoColumnDiv";
 import { Container } from "../../components/container";
+import Button from "../../components/Button";
 import DescriptionHome from "../../components/descriptionhome";
+import Paragraph from "../../components/Paragraph";
+import Heading from "../../components/Heading";
 const Cursor = styled.div``;
 const Mouse = styled.div``;
 
@@ -57,9 +60,31 @@ const HomeLanding = styled.div`
   flex-wrap: wrap;
 `;
 
+const WhiteTriangle = styled.div`
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 0;
+  border-top: 100vh solid white;
+  border-right: 30vw solid transparent;
+`;
+
+const WhiteTriangleAlt = styled.div`
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  height: 0;
+  border-bottom: 100vh solid white;
+  border-left: 40vw solid transparent;
+`;
+
 const Left = styled.div`
   flex: 100%;
-
+  z-index: 1;
   @media (min-width: 900px) {
     flex: 50%;
     height: 100%;
@@ -85,7 +110,7 @@ const JULIA = styled.div`
   background-color: white;
   padding: 20px;
   width: 350px;
-
+  z-index: 99;
   p {
     margin: 0 auto;
     font-weight: 900;
@@ -114,6 +139,49 @@ const GrayContainer = styled(Container)`
 const SolidGrayContainer = styled(Container)`
   background-color: #f2f2f2;
   margin: 0;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-left: 10%;
+
+  p {
+    max-width: 400px;
+  }
+`;
+
+const ProjectDescription = styled(Container)`
+  width: 40%;
+  height: auto;
+  vertical-align: middle;
+`;
+
+const ProjectDiv = styled(Container)`
+  width: 30%;
+  height: 800px;
+`;
+
+const Project = styled(Container)`
+  width: 400px;
+  height: 33%;
+  padding: 0;
+  margin: 0 20px 20px 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("https://s3-alpha-sig.figma.com/img/0f29/4ab3/d756d27ec4094f94acb28e642e628864?Expires=1563753600&Signature=JYk6w9M-Jj4Er-y8IuSG-FEiZUTuj9M~QP7b4wMho1fT3~ElNEBmAMNTo-N1jvOAye~RuJDBXVSqvqxv06B0ffJIIQPA3IcZ~sLtgipNokLkvWR4XhTOsc-mcbzrsExUkK~ERKBUiA0a4uO80vJpWIyygk~GyQLkamxvS4cp36rXe1K97nG6LzhMSgcFG86PQTr6EGk6ZqllqdIoqkOHdDPKVnMIiVcZO7XCOGOGU8SpVnP8FR7ZCxC-6KERGw2x4naITmG3uI5Is9EI1Js4Q~SHDSjepUJr9bnyNgJyhPHbAdTV-FI74dvWBAVsTS2KYPCeBbr9szlP~dFcXoNKNg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+
+  :nth-child(1) {
+    transform: translateX(0px);
+  }
+
+  :nth-child(2) {
+    transform: translateX(-100px);
+  }
+
+  :nth-child(3) {
+    transform: translateX(-200px);
+  }
 `;
 
 class Landing extends Component {
@@ -166,6 +234,7 @@ class Landing extends Component {
           <HomeLanding>
             <Hamburger />
             <Left>
+              <WhiteTriangle />
               <JULIA>
                 <p>
                   JU <br />
@@ -181,7 +250,22 @@ class Landing extends Component {
             <TwoColumnDiv />
           </GrayContainer>
           <SolidGrayContainer>
-            <TwoColumnDiv />
+            <WhiteTriangleAlt />
+            <ProjectDescription>
+              <Heading>My Projects</Heading>
+              <Paragraph>
+                I spend lots of my free exploring new technologies and picking
+                up new development projects. <br />
+                <br />
+                Take a look at what I've been working on recently.
+              </Paragraph>
+              <Button>See My Work</Button>
+            </ProjectDescription>
+            <ProjectDiv>
+              <Project />
+              <Project />
+              <Project />
+            </ProjectDiv>
           </SolidGrayContainer>
         </Content>
       </Layout>

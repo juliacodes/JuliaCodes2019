@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 
 const Paragraph = styled.p`
-  margin: 20px 0;
+  margin: 40px 0;
   width: 100%;
   max-width: 500px;
   font-family: "Lato", sans-serif;
