@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components/macro";
 import Me from "./Me.png";
+import Heading from "../../components/Heading";
+import Paragraph from "../../components/Paragraph";
 
 const Row = styled.div`
   width: 100%;
@@ -47,6 +49,7 @@ const HeaderText = styled.div`
     font-weight: 800;
     letter-spacing: -0.025em;
     margin-bottom: 30px;
+    margin: 0;
   }
 
   p {
@@ -100,25 +103,25 @@ function IntroRow() {
     <Row>
       <Left>
         <HeaderText>
-          <h1>
+          <Heading>
             Building More Than <br />
             Just Websites
-          </h1>
-          <p>
+          </Heading>
+          <Paragraph>
             Duis sit amet mauris in tortor facilisis ornare eleifend vel quam.
             Aliquam erat volutpat. Integer non elementum sem, vel convallis
             erat.
-          </p>
-          <p>
+          </Paragraph>
+          <Paragraph>
             Duis sit amet mauris in tortor facilisis ornare eleifend vel quam.
             Aliquam erat volutpat. Integer non elementum sem, vel convallis
             erat.
-          </p>
-          <p>
+          </Paragraph>
+          <Paragraph>
             Duis sit amet mauris in tortor facilisis ornare eleifend vel quam.
             Aliquam erat volutpat. Integer non elementum sem, vel convallis
             erat.
-          </p>
+          </Paragraph>
         </HeaderText>
       </Left>
       <Right>

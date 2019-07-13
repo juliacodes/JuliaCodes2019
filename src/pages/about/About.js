@@ -7,9 +7,6 @@ import GridRow from "./GridRow";
 import Square from "../../components/square";
 import SkillsGrid from "./SkillsGrid";
 import Footer from "../../components/footer";
-import { Container } from "../../components/container";
-import Paragraph from "../../components/Paragraph";
-import Heading from "../../components/Heading";
 
 const Cursor = styled.div``;
 const Mouse = styled.div``;

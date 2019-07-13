@@ -43,10 +43,7 @@ function Footer() {
       <CenterCTA>
         <h3>Want to learn more?</h3>
         <CenterButton>
-          <Button
-            link="@mailto:john2122@purdue.edu"
-            buttonText="Let's Chat"
-          ></Button>
+          <Button>Let's Chat</Button>
         </CenterButton>
       </CenterCTA>
     </FooterCont>
