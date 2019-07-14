@@ -3,6 +3,8 @@ import styled from "styled-components/macro";
 import Hamburger from "../../components/hamburger";
 import IntroRow from "../about/IntroRow";
 import Square from "../../components/square";
+import { breakpoints } from "../../Media";
+
 import Footer from "../../components/footer";
 
 const Cursor = styled.div``;
@@ -65,6 +67,34 @@ const RowSpacer = styled.div`
   padding: 80px 0;
 `;
 
+const SquareHeader = styled.div`
+  width: 100%;
+  max-height: 300px;
+  height: 30%;
+  position: relative;
+`;
+
+const SquareTitle = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 30px 30px 5px;
+  background-color: white;
+
+  p {
+    margin: 0;
+    padding: 0;
+    font-weight: 800;
+    font-size: 150px;
+    line-height: 81.45%;
+    letter-spacing: -0.045em;
+
+    span {
+      color: #b5f6ff;
+    }
+  }
+`;
+
 class Work extends Component {
   state = {
     xMain: 0,
@@ -113,7 +143,15 @@ class Work extends Component {
         </Mouse>
         <Content>
           <AboutLanding>
-            <Square />
+            <SquareHeader>
+              <SquareTitle>
+                <p>
+                  WO
+                  <br />
+                  RK<span>.</span>
+                </p>
+              </SquareTitle>
+            </SquareHeader>
             <IntroRow />
           </AboutLanding>
           <Hamburger />
