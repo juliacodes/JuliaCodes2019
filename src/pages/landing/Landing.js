@@ -132,15 +132,19 @@ const Right = styled.div`
 const JULIA = styled.div`
   background-color: white;
   padding: 20px;
-  width: 350px;
+  width: 200px;
   z-index: 99;
 
   p {
     margin: 0 auto;
     font-weight: 900;
-    font-size: 200px;
+    font-size: 100px;
     line-height: 86.95%;
     letter-spacing: -0.03em;
+
+    @media (min-width: ${breakpoints.mobileMax}) {
+      font-size: 200px;
+    }
   }
 
   @media (min-width: ${breakpoints.mobileMax}) {
@@ -215,12 +219,37 @@ const Project = styled(Container)`
   background-repeat: no-repeat;
   background-position: center;
   background-color: #d3d3d3;
+  transition: box-shadow 0.2s;
   /* background-image: url("https://s3-alpha-sig.figma.com/img/0f29/4ab3/d756d27ec4094f94acb28e642e628864?Expires=1563753600&Signature=JYk6w9M-Jj4Er-y8IuSG-FEiZUTuj9M~QP7b4wMho1fT3~ElNEBmAMNTo-N1jvOAye~RuJDBXVSqvqxv06B0ffJIIQPA3IcZ~sLtgipNokLkvWR4XhTOsc-mcbzrsExUkK~ERKBUiA0a4uO80vJpWIyygk~GyQLkamxvS4cp36rXe1K97nG6LzhMSgcFG86PQTr6EGk6ZqllqdIoqkOHdDPKVnMIiVcZO7XCOGOGU8SpVnP8FR7ZCxC-6KERGw2x4naITmG3uI5Is9EI1Js4Q~SHDSjepUJr9bnyNgJyhPHbAdTV-FI74dvWBAVsTS2KYPCeBbr9szlP~dFcXoNKNg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"); */
 
   @media (min-width: ${breakpoints.mobileMax}) {
     margin: 0 20px 20px 40px;
     width: 400px;
     height: 33%;
+  }
+
+  ::after {
+    content: "+";
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.2s;
+    font-size: 20px;
+    content: "+";
+    padding: 20px 30px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+  }
+
+  &:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+    ::after {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
   :nth-child(1) {
     transform: translateX(0px);
