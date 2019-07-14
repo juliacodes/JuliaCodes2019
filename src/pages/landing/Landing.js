@@ -3,6 +3,7 @@ import styled from "styled-components/macro";
 import Hamburger from "../../components/hamburger";
 import TwoColumnDiv from "../../components/TwoColumnDiv";
 import { Container } from "../../components/container";
+import { breakpoints } from "../../Media";
 import Button from "../../components/Button";
 import DescriptionHome from "../../components/descriptionhome";
 import Paragraph from "../../components/Paragraph";
@@ -17,7 +18,7 @@ const Layout = styled.div`
   max-width: 2000px;
   margin: 0 auto;
 
-  @media (min-width: 900px) {
+  @media (min-width: ${breakpoints.mobileMax}) {
     width: 100vw;
     height: 100vh;
   }
@@ -45,50 +46,69 @@ const Layout = styled.div`
 `;
 
 const Content = styled.div`
-  margin: 30px;
-
+  margin: 10px;
   display: flex;
   width: calc(100% - 90px);
   flex: 1 0 auto;
   flex-wrap: wrap;
   position: relative;
   overflow: scroll;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    margin: 30px;
+  }
 `;
 
 const HomeLanding = styled.div`
-  display: flex;
-  flex: 1 0 auto;
+  height: 100vh;
   background-color: #ecf3f4;
-  height: 100%;
-  flex-wrap: wrap;
+  width: 100%;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    display: flex;
+    flex: 1 0 auto;
+    background-color: #ecf3f4;
+    height: 100%;
+    flex-wrap: wrap;
+  }
 `;
 
 const WhiteTriangle = styled.div`
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  left: 0;
-  width: 40%;
-  height: 0;
-  border-top: 100vh solid white;
-  border-right: 30vw solid transparent;
+  opacity: 0;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    opacity: 1;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 0;
+    border-top: 100vh solid white;
+    border-right: 30vw solid transparent;
+  }
 `;
 
 const WhiteTriangleAlt = styled.div`
-  position: absolute;
-  z-index: 0;
-  bottom: 0;
-  right: 0;
-  width: 40%;
-  height: 0;
-  border-bottom: 100vh solid white;
-  border-left: 40vw solid transparent;
+  opacity: 0;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    right: 0;
+    width: 40%;
+    height: 0;
+    border-bottom: 100vh solid white;
+    border-left: 40vw solid transparent;
+    opacity: 1;
+  }
 `;
 
 const Left = styled.div`
   flex: 100%;
   z-index: 1;
-  @media (min-width: 900px) {
+  @media (min-width: ${breakpoints.mobileMax}) {
     flex: 50%;
     height: 100%;
     align-items: center;
@@ -100,7 +120,7 @@ const Left = styled.div`
 const Right = styled.div`
   flex: 100%;
 
-  @media (min-width: 900px) {
+  @media (min-width: ${breakpoints.mobileMax}) {
     flex: 50%;
     height: 100%;
     align-items: center;
@@ -114,6 +134,7 @@ const JULIA = styled.div`
   padding: 20px;
   width: 350px;
   z-index: 99;
+
   p {
     margin: 0 auto;
     font-weight: 900;
@@ -122,7 +143,7 @@ const JULIA = styled.div`
     letter-spacing: -0.03em;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: ${breakpoints.mobileMax}) {
     background-color: unset;
     padding: 0;
     width: 100%;
@@ -146,7 +167,12 @@ const SolidGrayContainer = styled(Container)`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-left: 10%;
+  padding-left: 0;
+  flex-wrap: wrap;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    padding-left: 10%;
+  }
 
   p {
     max-width: 400px;
@@ -154,37 +180,67 @@ const SolidGrayContainer = styled(Container)`
 `;
 
 const ProjectDescription = styled(Container)`
-  width: 40%;
+  width: 100%;
+  height: 100%;
   height: auto;
   vertical-align: middle;
+  margin-left: 20px;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    width: 40%;
+    margin-left: 5%;
+  }
 `;
 
 const ProjectDiv = styled(Container)`
-  width: 30%;
-  height: 800px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    width: 30%;
+    height: 800px;
+    display: block;
+    margin: 100px;
+  }
 `;
 
 const Project = styled(Container)`
-  width: 400px;
-  height: 33%;
+  width: 100%;
+  height: 400px;
   padding: 0;
-  margin: 0 20px 20px 40px;
+  margin: 20px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #d3d3d3;
   /* background-image: url("https://s3-alpha-sig.figma.com/img/0f29/4ab3/d756d27ec4094f94acb28e642e628864?Expires=1563753600&Signature=JYk6w9M-Jj4Er-y8IuSG-FEiZUTuj9M~QP7b4wMho1fT3~ElNEBmAMNTo-N1jvOAye~RuJDBXVSqvqxv06B0ffJIIQPA3IcZ~sLtgipNokLkvWR4XhTOsc-mcbzrsExUkK~ERKBUiA0a4uO80vJpWIyygk~GyQLkamxvS4cp36rXe1K97nG6LzhMSgcFG86PQTr6EGk6ZqllqdIoqkOHdDPKVnMIiVcZO7XCOGOGU8SpVnP8FR7ZCxC-6KERGw2x4naITmG3uI5Is9EI1Js4Q~SHDSjepUJr9bnyNgJyhPHbAdTV-FI74dvWBAVsTS2KYPCeBbr9szlP~dFcXoNKNg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"); */
 
+  @media (min-width: ${breakpoints.mobileMax}) {
+    margin: 0 20px 20px 40px;
+    width: 400px;
+    height: 33%;
+  }
   :nth-child(1) {
     transform: translateX(0px);
+    @media (min-width: ${breakpoints.mobileMax}) {
+      transform: translateX(0px);
+    }
   }
 
   :nth-child(2) {
-    transform: translateX(-100px);
+    transform: translateX(0px);
+    @media (min-width: ${breakpoints.mobileMax}) {
+      transform: translateX(-100px);
+    }
   }
 
   :nth-child(3) {
-    transform: translateX(-200px);
+    transform: translateX(0px);
+    @media (min-width: ${breakpoints.mobileMax}) {
+      transform: translateX(-200px);
+    }
   }
 `;
 

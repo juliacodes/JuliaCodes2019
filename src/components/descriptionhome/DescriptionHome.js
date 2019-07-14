@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { breakpoints } from "../../Media";
 import styled from "styled-components/macro";
 import Paragraph from "../../components/Paragraph";
 import Heading from "../../components/Heading";
@@ -7,13 +8,38 @@ import medium from "./medium.png";
 import github from "./github.png";
 
 const Description = styled.div`
-  padding: 0;
+  padding-top: 100px;
   width: 100%;
   flex: 1 0 auto;
   position: relative;
   display: flex;
   flex-direction: column;
   background-position: center center;
+  @media (min-width: ${breakpoints.mobileMax}) {
+    padding: 0;
+    width: 100%;
+    flex: 1 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-position: center center;
+  }
+
+  h1 {
+    text-align: center;
+    @media (min-width: ${breakpoints.mobileMax}) {
+      text-align: left;
+    }
+  }
+
+  p {
+    margin: 20px auto;
+    text-align: center;
+    @media (min-width: ${breakpoints.mobileMax}) {
+      margin: 20px 0;
+      text-align: left;
+    }
+  }
 `;
 
 const SocialLinks = styled.div`
@@ -23,7 +49,7 @@ const SocialLinks = styled.div`
   align-content: space-around;
   margin: 20px auto;
 
-  @media (min-width: 900px) {
+  @media (min-width: ${breakpoints.mobileMax}) {
     margin: unset;
     width: 100%;
   }
