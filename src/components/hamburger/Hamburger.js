@@ -5,20 +5,28 @@ import hamburger from "./hamburger.svg";
 import hamburgerHover from "./hamburgerHover.svg";
 import close from "./close.svg";
 import closeHover from "./closeHover.svg";
+import { breakpoints } from "../../Media";
 
 const HamburgerContainer = styled.div`
   position: fixed;
-  right: 20px;
-  top: 20px;
+  right: 0px;
+  top: 0px;
   height: 100%;
+  width: 100%;
   z-index: 9999;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    right: 20px;
+    top: 20px;
+    width: unset;
+  }
 `;
 const HamburgerImg = styled.div`
   z-index: 99999;
   display: block;
   position: absolute;
-  top: 40px;
-  right: 80px;
+  top: 30px;
+  right: 60px;
   width: ${props => (props.on ? `40px` : `20px`)};
   height: 30px;
   display: block;
@@ -31,6 +39,11 @@ const HamburgerImg = styled.div`
   transition-duration: 0.2s;
   animation: fadeIn 1s forwards;
   animation-delay: 1s;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    top: 40px;
+    right: 80px;
+  }
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -49,17 +62,23 @@ const HamburgerImg = styled.div`
 const NavContainer = styled.div`
   height: 100%;
   z-index: 999;
-  padding-left: 80px;
-  width: 500px;
+  width: 100%;
+  padding-left: 30px;
   background-color: white;
   position: ${props => (props.on ? "fixed" : "absolute")};
+  display: block;
   right: 0;
   top: 0;
-  display: block;
   opacity: 0;
   animation: ${props =>
     props.on ? "SlideOutRight .7s forwards" : "SlideFromLeft .5s forwards"};
 
+  @media (min-width: ${breakpoints.mobileMax}) {
+    width: 500px;
+    right: 0;
+    top: 0;
+    padding-left: 80px;
+  }
   @keyframes SlideFromLeft {
     0% {
       transform: translate(1000px);
