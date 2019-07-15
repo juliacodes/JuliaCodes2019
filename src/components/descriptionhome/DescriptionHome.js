@@ -8,7 +8,7 @@ import medium from "./medium.png";
 import github from "./github.png";
 
 const Description = styled.div`
-  padding-top: 100px;
+  padding: 100px 20px;
   width: 100%;
   flex: 1 0 auto;
   position: relative;

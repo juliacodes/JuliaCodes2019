@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import comp from "./comp.png";
+import { breakpoints } from "../../Media";
 import coffee from "./coffee.png";
 import ipad from "./ipad.png";
 import sticker from "./sticker.png";
@@ -15,7 +16,7 @@ const Row = styled.div`
 `;
 
 const LeftGrid = styled.div`
-  flex: 70%;
+  flex: 100%;
   flex-wrap: wrap;
   padding: 0px;
   display: grid;
@@ -23,7 +24,9 @@ const LeftGrid = styled.div`
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "Left Left centertop Right Right" "Left Left centerbot Right Right";
   grid-gap: 20px;
-
+  @media (min-width: ${breakpoints.mobileMax}) {
+    flex: 70%;
+  }
   * {
     position: relative;
     height: 200px;
@@ -32,25 +35,42 @@ const LeftGrid = styled.div`
 
 const GridLeft = styled.div`
   grid-area: Left;
-  height: 420px;
+  height: 320px;
   background-image: url(${comp});
   background-size: cover;
+  @media (min-width: ${breakpoints.mobileMax}) {
+    height: 420px;
+  }
 `;
 const CenterTop = styled.div`
   grid-area: centertop;
   background-image: url(${sticker});
   background-size: cover;
+  height: 150px;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    height: unset;
+  }
 `;
 const CenterBot = styled.div`
   grid-area: centerbot;
   background-image: url(${coffee});
   background-size: cover;
+  height: 150px;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    height: unset;
+  }
 `;
 const GridRight = styled.div`
   grid-area: Right;
-  height: 420px;
+  height: 320px;
   background-image: url(${ipad});
   background-size: cover;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    height: 420px;
+  }
 `;
 
 const RightCTA = styled.div`

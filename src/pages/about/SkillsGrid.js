@@ -1,4 +1,5 @@
 import React from "react";
+import { breakpoints } from "../../Media";
 import styled from "styled-components/macro";
 import Heading from "../../components/Heading";
 import Paragraph from "../../components/Paragraph";
@@ -6,23 +7,40 @@ import Paragraph from "../../components/Paragraph";
 const DarkGrid = styled.div`
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   background-color: #1c202e;
   padding: 30px 0;
+  @media (min-width: ${breakpoints.mobileMax}) {
+    flex-wrap: nowrap;
+  }
 `;
 
 const LeftSkills = styled.div`
-  flex: 40%;
-  padding: 40px;
+  flex: 100%;
+  padding: 0;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    flex: 40%;
+    padding: 40px;
+  }
 `;
 const RightSkills = styled.div`
-  flex: 30%;
-  padding: 40px;
+  flex: 100%;
+  padding: 0;
+  @media (min-width: ${breakpoints.mobileMax}) {
+    flex: 30%;
+    padding: 40px;
+  }
 `;
 
 const SkillDescription = styled.div`
   width: 100%;
   color: white;
-  padding: 30px 20%;
+  padding: 30px 30px;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    padding: 30px 20%;
+  }
 
   h1 {
     max-width: 250px;

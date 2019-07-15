@@ -3,6 +3,7 @@ import styled from "styled-components/macro";
 import Hamburger from "../../components/hamburger";
 import IntroRow from "./IntroRow";
 import TimelineRow from "./TimelineRow";
+import { breakpoints } from "../../Media";
 import GridRow from "./GridRow";
 import Square from "../../components/square";
 import SkillsGrid from "./SkillsGrid";
@@ -18,7 +19,7 @@ const Layout = styled.div`
   margin: 0 auto;
   overflow: hidden;
 
-  @media (min-width: 900px) {
+  @media (min-width: ${breakpoints.mobileMax}) {
     width: 100vw;
     height: 100vh;
   }
@@ -46,7 +47,7 @@ const Layout = styled.div`
 `;
 
 const Content = styled.div`
-  margin: 30px;
+  margin: 10px;
   display: flex;
   width: calc(100% - 90px);
   flex: 1 0 auto;
@@ -54,13 +55,22 @@ const Content = styled.div`
   position: relative;
   background-color: #f6f6f6;
   overflow: scroll;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    margin: 30px;
+  }
 `;
 
 const AboutLanding = styled.div`
-  display: flex;
-  flex: 1 0 auto;
-  height: 100%;
-  flex-wrap: wrap;
+  height: 120vh;
+  width: 100%;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    display: flex;
+    flex: 1 0 auto;
+    height: 100%;
+    flex-wrap: wrap;
+  }
 `;
 
 const RowSpacer = styled.div`
