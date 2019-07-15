@@ -10,6 +10,7 @@ const DarkGrid = styled.div`
   flex-wrap: wrap;
   background-color: #1c202e;
   padding: 30px 0;
+
   @media (min-width: ${breakpoints.mobileMax}) {
     flex-wrap: nowrap;
   }
@@ -21,7 +22,7 @@ const LeftSkills = styled.div`
 
   @media (min-width: ${breakpoints.mobileMax}) {
     flex: 40%;
-    padding: 40px;
+    padding: 0px;
   }
 `;
 const RightSkills = styled.div`
@@ -29,17 +30,18 @@ const RightSkills = styled.div`
   padding: 0;
   @media (min-width: ${breakpoints.mobileMax}) {
     flex: 30%;
-    padding: 40px;
+    padding: 0px;
   }
 `;
 
 const SkillDescription = styled.div`
   width: 100%;
   color: white;
-  padding: 30px 30px;
+  padding: 30px 20px;
 
   @media (min-width: ${breakpoints.mobileMax}) {
     padding: 30px 20%;
+    width: unset;
   }
 
   h1 {

@@ -74,10 +74,14 @@ const GridRight = styled.div`
 `;
 
 const RightCTA = styled.div`
-  flex: 30%;
+  flex: 100%;
   padding: 20px;
   align-items: center;
   display: flex;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    flex: 30%;
+  }
 `;
 
 const CTAText = styled.div`
