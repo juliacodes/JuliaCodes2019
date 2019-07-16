@@ -13,6 +13,10 @@ const Row = styled.div`
   height: auto;
   display: flex;
   flex-wrap: wrap;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    flex-wrap: nowrap;
+  }
 `;
 
 const LeftGrid = styled.div`
@@ -89,19 +93,37 @@ const CTAText = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 0 20%;
+  padding: 0 50px;
   background-position: center center;
+  @media (min-width: ${breakpoints.mobileMax}) {
+    padding: 0 20%;
+  }
 
   h3 {
-    max-width: 250px;
+    max-width: unset;
     margin: 30px 0;
-    text-align: left;
+    text-align: center;
     font-family: "Lato", sans-serif;
     font-size: 28px;
     line-height: 128.95%;
     font-weight: 800;
     letter-spacing: -0.025em;
     margin-bottom: 30px;
+
+    @media (min-width: ${breakpoints.mobileMax}) {
+      max-width: 250px;
+      text-align: left;
+    }
+  }
+`;
+
+const CenterButton = styled(Button)`
+  width: 60%;
+  margin: 0 auto;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    width: 200px;
+    margin: 0;
   }
 `;
 
@@ -117,7 +139,7 @@ function GridRow(props) {
       <RightCTA>
         <CTAText>
           <h3>I'm a lot cooler on instagram</h3>
-          <Button>See More</Button>
+          <CenterButton>See More</CenterButton>
         </CTAText>
       </RightCTA>
     </Row>

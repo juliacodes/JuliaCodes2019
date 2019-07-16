@@ -60,7 +60,7 @@ const Content = styled.div`
 `;
 
 const HomeLanding = styled.div`
-  height: 100vh;
+  height: calc(100vh - 20px);
   background-color: #ecf3f4;
   width: 100%;
 
