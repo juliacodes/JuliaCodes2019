@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components/macro";
 import Hamburger from "../../components/hamburger";
 import IntroRow from "../about/IntroRow";
-import Square from "../../components/square";
-import { breakpoints } from "../../Media";
-
+import ProjectDiv from "../../components/ProjectDiv";
 import Footer from "../../components/footer";
 
 const Cursor = styled.div``;
@@ -60,11 +58,6 @@ const AboutLanding = styled.div`
   flex: 1 0 auto;
   height: 100%;
   flex-wrap: wrap;
-`;
-
-const RowSpacer = styled.div`
-  width: 100%;
-  padding: 80px 0;
 `;
 
 const SquareHeader = styled.div`
@@ -152,7 +145,7 @@ class Work extends Component {
                 </p>
               </SquareTitle>
             </SquareHeader>
-            <IntroRow />
+            <ProjectDiv />
           </AboutLanding>
           <Hamburger />
           <Footer />
